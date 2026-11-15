@@ -519,6 +519,20 @@ body[data-page="item"] #c-nav{display:none}
 #cat .bgo{position:absolute;left:14px;bottom:14px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#ffffff18;border:1px solid #ffffff30}
 #cat .bgo svg{width:16px;height:16px}
 @keyframes bspin{to{--ba:360deg}}
+
+/* wide banners with bottles */
+#cat .bigs{grid-template-columns:1fr;gap:46px;margin:44px 0 22px}
+#cat .bb{overflow:visible;min-height:150px;padding:18px 18px 16px 18px;align-items:flex-start;justify-content:center;padding-left:46%}
+#cat .bb::after{border-radius:22px}
+#cat .bb .bph{position:absolute;inset:2px;border-radius:22px;overflow:hidden;z-index:-1;pointer-events:none}
+#cat .bb .bph img{position:absolute;left:0;top:0;width:62%;height:100%;object-fit:cover;opacity:.55;-webkit-mask-image:linear-gradient(90deg,#000 20%,transparent 100%),linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,#000 20%,transparent 100%),linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);mask-composite:intersect}
+#cat .bb .bt{position:absolute;bottom:8px;width:auto;pointer-events:none;filter:drop-shadow(0 12px 12px #000b);z-index:2}
+#cat .bb .b1{left:6%;height:188px}
+#cat .bb .b2{left:30%;height:150px;bottom:6px}
+#cat .bb .bgo{left:auto;right:18px;bottom:16px}
+#cat .bb .bi{margin-bottom:8px}
+#cat .bb b{font-size:19px}
+#cat .bb small{margin-bottom:26px}
 @media (prefers-reduced-motion:reduce){#cat .bb::before{animation:none}}
 #cat .nlink{display:flex;align-items:center;justify-content:center;gap:6px;color:var(--muted);font-size:13.5px;padding:2px}
 #cat .nlink svg{width:16px;height:16px}
@@ -568,6 +582,20 @@ body[data-page="item"] #c-nav{display:none}
 #cat .nhero .sl{position:absolute;left:50%;top:46%;will-change:transform,opacity,filter;cursor:pointer}
 #cat .nhero .sl img{display:block;height:196px;width:auto;pointer-events:none;filter:drop-shadow(0 16px 18px #000a) drop-shadow(0 0 24px #a855f755);-webkit-box-reflect:below 3px linear-gradient(transparent 62%,#ffffff33)}
 #cat .nhero .nfloor{position:absolute;left:50%;bottom:20px;width:260px;height:26px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,#c084fc66,#7c3aed22 55%,transparent);pointer-events:none;filter:blur(2px)}
+
+/* logo on top with light rays */
+#cat .nhero{height:436px}
+#cat .nhero .nstage{top:172px}
+#cat .nhero .aura,#cat .nhero .r1,#cat .nhero .r2{top:302px}
+#cat .nhero .nts{top:76px}
+#cat .nlogo{top:62px;bottom:auto;left:0;right:0;text-align:center}
+#cat .nlogo::before{content:"";position:absolute;left:50%;top:44px;width:360px;height:200px;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 8deg at 50% 50%,#f0b8ff88 0 3deg,transparent 3deg 11deg);-webkit-mask-image:radial-gradient(closest-side,#000 10%,transparent 100%);mask-image:radial-gradient(closest-side,#000 10%,transparent 100%);filter:blur(1.5px);z-index:-1;pointer-events:none}
+#cat .nlogo::after{content:"";position:absolute;left:50%;top:44px;width:320px;height:130px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,#e7a4ffcc,#a54ff055 55%,transparent);filter:blur(8px);z-index:-1;pointer-events:none}
+#cat .nlogo h1{display:flex;justify-content:center;align-items:baseline;gap:12px;text-shadow:0 0 14px #f0abfcaa,0 0 38px #c26bf0aa,0 2px 6px #0008}
+#cat .nlogo h1 span{display:inline;font-size:56px;-webkit-text-fill-color:#fff;background:none;color:#fff}
+#cat .nlogo h1 b{display:inline;font-size:30px}
+#cat .nlogo .tg,#cat .nlogo .tg2{text-align:center;text-shadow:0 0 12px #c26bf099}
+#cat .nlogo{isolation:isolate}
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
 <defs>
@@ -962,8 +990,8 @@ function home(){
       <div class="nlogo"><h1><span>32</span><b>PERFUME</b></h1><p class="tg">هر رایحه، یک داستان</p><p class="tg2">Fragrance. Your Story.</p></div>
   </section>
   <div class="bigs">
-   <a class="bb q" href="#quiz"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><b>پیدا کردن عطر من</b><small>کوییز ۱۰ سوالی</small><span class="bgo">${ICON.arrow}</span></a>
-   <a class="bb c" href="#catalog" data-reset="1"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg></span><b>کاتالوگ عطرها</b><small>${fa(P.length)} عطر</small><span class="bgo">${ICON.arrow}</span></a>
+   <a class="bb q" href="#quiz"><span class="bph"><img src="${(P.find(p=>p.id===9)||{}).img||''}" alt="" draggable="false"></span><img class="bt b1" src="${BOT.aventus}" alt="" draggable="false"><img class="bt b2" src="${BOT.greenley}" alt="" draggable="false"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><b>پیدا کردن عطر من</b><small>کوییز ۱۰ سوالی</small><span class="bgo">${ICON.arrow}</span></a>
+   <a class="bb c" href="#catalog" data-reset="1"><span class="bph"><img src="${(P.find(p=>p.id===53)||{}).img||''}" alt="" draggable="false"></span><img class="bt b1" src="${BOT.fabulous}" alt="" draggable="false"><img class="bt b2" src="${BOT.infinity}" alt="" draggable="false"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg></span><b>کاتالوگ عطرها</b><small>${fa(P.length)} عطر</small><span class="bgo">${ICON.arrow}</span></a>
   </div>
   <div class="sh"><i></i><h2>انتخاب‌های <em>محبوب</em></h2><i></i><a href="#catalog" data-reset="1">مشاهده همه</a></div>
   <div class="rail" id="c-rail">${hot.map(rc).join('')}</div>
